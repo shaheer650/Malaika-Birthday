@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Malaika ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #c084fc);
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 35px 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.heart {
+    font-size: 65px;
+    animation: beat 1s infinite;
+}
+
+h1 {
+    font-size: 38px;
+    text-shadow: 2px 3px 8px #b83280;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.card {
+    margin-top: 25px;
+    padding: 25px 18px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+button {
+    background: white;
+    color: #e84393;
+    border: none;
+    padding: 15px 24px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+#surprise {
+    display: none;
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 1.9;
+}
+
+.floating {
+    position: fixed;
+    top: -40px;
+    animation: fall 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">💖</div>
+
+    <h1>Happy Birthday<br>Malaika! 🎂</h1>
+
+    <p>
+        Today is a special day because someone
+        very special was born. 🌸
+    </p>
+
+    <div class="card">
+
+        <h2>For You, Malaika 💌</h2>
+
+        <p>
+            You deserve all the happiness,
+            love and beautiful moments in the world.
+            May your smile always shine
+            brighter than the stars. ✨
+        </p>
+
+        <button onclick="showSurprise()">
+            Open Your Surprise 🎁
+        </button>
+
+        <div id="surprise">
+            💗 Happy Birthday, Malaika! 💗<br>
+            May all your dreams come true.<br>
+            Keep smiling and stay blessed. 🥹💕<br>
+            You are truly special! 🌹
+        </div>
+
+    </div>
+
+    <p>Made with ❤️ just for Malaika</p>
+
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+
+    for (let i = 0; i < 45; i++) {
+        let item = document.createElement("div");
+        item.className = "floating";
+        item.innerHTML = ["💗","💖","💕","🎈","✨","🌸"][
+            Math.floor(Math.random() * 6)
+        ];
+        item.style.left = Math.random() * 100 + "vw";
+        item.style.animationDelay = Math.random() * 3 + "s";
+        item.style.fontSize = (18 + Math.random() * 20) + "px";
+        document.body.appendChild(item);
+
+        setTimeout(() => item.remove(), 7500);
+    }
+}
+</script>
+
+</body>
+</html>
